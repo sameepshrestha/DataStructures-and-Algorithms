@@ -3,6 +3,7 @@ class Linked_list:
         self.item= x
         self.next = None
     def later_node(self,i):
+        #recursive implementation 
         if i==0: return self
         assert self.next #chefcking if there is the next item
         return self.next.later_node(i-1)
