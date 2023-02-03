@@ -22,7 +22,7 @@ class LinkedList:
             self.insert_first(a)
    
     def later_node(self,i):
-        if i==0:return self
+        if i==0: return self
         assert self.next
         return self.later_node(i-1)
 
@@ -49,8 +49,8 @@ class LinkedList:
         self.size+=1
  
 
-a = LinkedList()
-a.build(["Mon"])
-print(a.get_at(0))
-a.insert_first("tue")
-print(a.get_at(0))
+# a = LinkedList()
+# a.build(["Mon"])
+# print(a.get_at(0))
+# a.insert_first("tue")
+# print(a.get_at(0))
