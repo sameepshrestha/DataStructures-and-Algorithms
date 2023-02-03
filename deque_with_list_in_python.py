@@ -41,9 +41,15 @@ class DequeSequence:
   def get_index(self,i):
     if i>=self.length or i<0: return IndexError("Index does not exist")
     return self.array[self.head+i]
-
+    
   def resize(self):
-    self.build(self.array[self.head:self.tail])
+      new_size =self.length*3
+      new_array = [None] * new_size
+      new_array[self.length:2 * self.length] = self.array[self.head:self.tail]
+      self.head = self.length
+      self.tail = 2 * self.length
+      self.array = new_array
+      self.size = new_size
   
   def pop_first(self):
     if self.length == 0:
@@ -56,16 +62,16 @@ class DequeSequence:
       self.resize()
     return value
 
-def pop_last(self):
-    if self.length == 0:
-        raise IndexError("The deque is empty")
-    value = self.array[self.tail]
-    self.array[self.tail] = None
-    self.tail -= 1
-    self.length -= 1
-    if self.length *4 < self.size:
-      self.resize()
-    return value
+  def pop_last(self):
+      if self.length == 0:
+          raise IndexError("The deque is empty")
+      value = self.array[self.tail]
+      self.array[self.tail] = None
+      self.tail -= 1
+      self.length -= 1
+      if self.length *4 < self.size:
+        self.resize()
+      return value
 
 a =DequeSequence()
 a.build([1,2,3])
