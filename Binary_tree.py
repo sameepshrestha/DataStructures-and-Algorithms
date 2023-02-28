@@ -13,7 +13,7 @@ class Binary_Node:
 #tree navigation 
 
     def subtree_first(self):
-        #finding the first node in the subbtree  
+        #finding the first node in the subbtree  git 
         if self.left: return self.left.subtree_first()
         else: return self
     
@@ -34,3 +34,19 @@ class Binary_Node:
         while self.parent and (self is self.parent.left):
             self =self.parent
         return self.parent
+    
+#Dynamic operations 
+#Insert inside a Tree
+    def subtree_insert_before(A, B):
+        if A.left:
+            A = A.left.subtree_last()
+            A.right. B.parent = B,A
+        else:
+            A.left, B.parent = B, A
+    
+    def subtree_insert_after(A,B):
+        if A.right:
+            A = A.right.subtree_first ()
+            A.left, B.parent = B, A
+        else:
+            A.right, B.parent =B, A
