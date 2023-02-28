@@ -73,3 +73,15 @@ class Binary_Node:
             else: A.parent.right = None
         return A
     
+class Binary_Tree:
+    def __init__(T, Node_type =  Binary_Node):
+        T.rot = None
+        T.size = 0 
+        T.Node_Type = Node_type
+
+    def __len__(T): return T.size
+    def __iter__(T):
+        if T.root:
+            for A in T.root.subtree_iter():
+                yield A.item
+    
