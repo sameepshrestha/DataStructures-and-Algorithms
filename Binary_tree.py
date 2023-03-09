@@ -72,7 +72,7 @@ class Binary_Node:
             if A.parent.left is A: A.parent.left= None
             else: A.parent.right = None
         return A
-    
+
 class Binary_Tree:
     def __init__(T, Node_type =  Binary_Node):
         T.rot = None
